@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
-import Btn from "./components/Btn";
 import "./App.css";
+import ModeToggler from "./components/ModeToggler";
 
 function App() {
-  return <Btn />;
+  return <ModeToggler />;
 }
 
 export default App;
