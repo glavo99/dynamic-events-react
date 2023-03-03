@@ -1,8 +1,12 @@
-import Promo from './Promo';
+import InputComponent from "./InputComponent";
+import RegisterForm from "./RegisterForm";
 function App() {
 
     return (
-      <Promo />
+    <>
+      <InputComponent />
+      <RegisterForm />
+    </>
     );
   }
   
