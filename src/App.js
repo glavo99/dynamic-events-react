@@ -1,13 +1,19 @@
-import InputComponent from "./InputComponent";
-import RegisterForm from "./RegisterForm";
+import React, { useState } from "react";
+import Heading from "./Heading";
+import "./App.css";
 function App() {
-
-    return (
-    <>
-      <InputComponent />
-      <RegisterForm />
-    </>
-    );
+  const [word, setWord] = React.useState("Eat");
+  // can't use the state's setting variable from your state directly.
+  //  Instead of updating it directly, I can update it based on a click event.
+  function handleClick() {
+    setWord("drink");
   }
-  
-  export default App;
+  return (
+    <div className="App">
+      <Heading message={word + " at little lemon"} />
+      <button onClick={handleClick}>Click Here</button>
+    </div>
+  );
+}
+
+export default App;
