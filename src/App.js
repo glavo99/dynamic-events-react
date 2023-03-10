@@ -1,26 +1,18 @@
-import React, { useReducer } from "react";
-import "./App.css";
-const reducer = (state, action) => {
-  if (action.type === "ride") return { money: state.money + 10 };
-  if (action.type === "fuel") return { money: state.money - 50 };
-  return new Error();
-};
+import React from "react";
+import Fruits from "./Fruits";
+import FruitsCounter from "./FruitsCounter";
 
 function App() {
-  const initialState = { money: 100 };
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+  const [fruits] = React.useState([
+    { fruitName: "apple", id: 1 },
+    { fruitName: "apple", id: 2 },
+    { fruitName: "plum", id: 3 },
+  ]);
   return (
     <div className="App">
-      <h1>Wallet: {state.money}</h1>
-      <div>
-        <button onClick={() => dispatch({ type: "ride" })}>
-          A new customer!
-        </button>
-        <button onClick={() => dispatch({ type: "fuel" })}>
-          Refill the tank!
-        </button>
-      </div>
+      <h1>Where should the state go?</h1>
+      <Fruits fruits={fruits}/>
+      <FruitsCounter fruits={fruits}/>
     </div>
   );
 }
